@@ -418,9 +418,9 @@ class ChannelOrderStates(models.Model):
                 raise ValidationError(
                     "Only one state  can be default at once !")
 
-    @api.one
     @api.constrains('odoo_order_state', 'odoo_create_invoice', 'odoo_set_invoice_state')
     def _check_order_state(self):
+        # self.ensure_one()
         if self.odoo_order_state not in ['sale', 'done'] and self.odoo_create_invoice:
             raise ValidationError(
                 "Invoice can not be created for a %s sale order." % (self.odoo_order_state))

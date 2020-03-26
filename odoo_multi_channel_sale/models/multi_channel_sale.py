@@ -143,8 +143,8 @@ class MultiChannelSale(models.Model):
                 'target': 'current',
             }
 
-    @api.one
     def _get_count(self):
+        # self.ensure_one()
         domain = [('channel_id', '=', (self.id))]
         products = self.env['channel.template.mappings'].search_count(domain)
         categories = self.env['channel.category.mappings'].search_count(domain)
@@ -964,8 +964,8 @@ class MultiChannelSale(models.Model):
             'target': 'new',
         }
 
-    @api.one
     def sync_order_feeds(self, vals,**kwargs):
+        # self.ensure_one()
         """
             ==Vals is a List of dictionaries==
             vals:list(dict(),dict())
@@ -1010,8 +1010,8 @@ class MultiChannelSale(models.Model):
             message = message
         )
 
-    @api.one
     def sync_partner_feeds(self, vals, **kwargs):
+        # self.ensure_one()
         channel_vals = kwargs.get('channel_vals') or self.get_channel_vals()
         res= self.create_model_objects('partner.feed', vals, extra_val= channel_vals)
         message = res.get('message','')
@@ -1024,7 +1024,7 @@ class MultiChannelSale(models.Model):
             message = message
         )
 
-    @api.one
+    #api.one
     def sync_category_feeds(self, vals, **kwargs):
         channel_vals = kwargs.get('channel_vals') or self.get_channel_vals()
         res= self.create_model_objects('category.feed', vals, extra_val = channel_vals)
@@ -1038,8 +1038,8 @@ class MultiChannelSale(models.Model):
             message = message
         )
 
-    @api.one
     def sync_product_feeds(self, vals, **kwargs):
+        # api.one
         channel_vals = kwargs.get('channel_vals') or self.get_channel_vals()
         res= self.create_model_objects('product.feed', vals, extra_val= channel_vals)
         context = dict(self._context)
