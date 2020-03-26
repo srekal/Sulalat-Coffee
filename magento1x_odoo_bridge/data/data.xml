@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- "License URL : <https://store.webkul.com/license.html/>" -->
+
+<odoo>
+    <data noupdate='1'>
+
+        <record model="crm.team" id="team_sales_magento1x">
+            <field name="name">Magento Sales</field>
+            <field name="member_ids" eval="[(4, ref('base.user_root'))]"/>
+        </record>
+
+        <record forcecreate='True'  model="multi.channel.sale" id="magento1x_channel" >
+            <field name="name">Magento 1x</field>
+            <field name="channel">magento1x</field>
+            <field name="discount_product_id" 
+                ref='odoo_multi_channel_sale.discount_product'/>
+            <field name="sku_sequence_id" 
+                ref='odoo_multi_channel_sale.product_sequence_id'/>
+            <field name="delivery_product_id"
+                ref='odoo_multi_channel_sale.delivery_product'/>
+            <field name="magento1x_api_username">webkulapi</field>
+            <field name="magento1x_api_key">webkulapi</field>
+            <field name="magento1x_base_uri">http://192.168.1.248/magento/1.9.2.4/test1/magento</field>
+                <field name="crm_team_id"
+                ref='team_sales_magento1x'/>
+        </record>
+
+        <record id="pending_order_states" forcecreate='True' model="channel.order.states">
+            <field name="channel_id" ref="magento1x_odoo_bridge.magento1x_channel"/>
+            <field name="channel_state">pending</field>
+            <field name="default_order_state">True</field>
+            <field name="odoo_order_state">draft</field>
+        </record>
+
+         <record id="processing_order_states" forcecreate='True' model="channel.order.states">
+            <field name="channel_id" ref="magento1x_odoo_bridge.magento1x_channel"/>
+            <field name="channel_state">processing</field>
+            <field name="odoo_order_state">sale</field>
+            <field name="odoo_create_invoice">True</field>
+            <field name="odoo_ship_order">True</field>
+            <field name="odoo_set_invoice_state">open</field>
+        </record>
+         <record id="canceled_order_states" forcecreate='True' model="channel.order.states">
+            <field name="channel_id" ref="magento1x_odoo_bridge.magento1x_channel"/>
+            <field name="channel_state">canceled</field>
+            <field name="odoo_order_state">cancelled</field>
+        </record>
+
+    </data>
+</odoo>

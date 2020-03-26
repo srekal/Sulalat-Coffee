@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- "License URL : <https://store.webkul.com/license.html/>" -->
+<odoo>
+    <data>
+       <record id="import_magento1x_partners_form" model="ir.ui.view">
+            <field name="name">import.magento1x.partners.form</field>
+            <field name="model">import.magento1x.partners</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Import Magento Partners">
+                    <sheet>
+
+                        <group>
+                            <group>
+                                <field name='operation'  invisible='1'/>
+                                <field name="import_customer_date" string='From Date' attrs="{
+                                  'invisible':[('operation','!=','import')],
+                                  'required':[('operation','=','import')],
+                                  }"/>
+
+                            </group>
+                            <group>
+                              <field name='channel_id' invisible='1'/>
+                              <field name="to_date" attrs="{
+                                'invisible':[('operation','!=','import')],
+                                'required':[('operation','=','import')],
+                                }"/>
+
+
+                            </group>
+                        </group>
+                        <group>
+
+                        </group>
+
+                    </sheet>
+                    <separator colspan="6"/>
+                    <footer>
+                        <button name="import_now" string="Import Now" type="object" class="oe_highlight" />
+                        or
+                        <button special="cancel" string="Cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+         <record id="import_magento1x_products_form" model="ir.ui.view">
+            <field name="name">import.magento1x.products.form</field>
+            <field name="model">import.magento1x.products</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Import Magento Products">
+                    <sheet>
+
+                      <group>
+                          <group>
+                              <field name='operation' widget='radio'/>
+                              <field name='channel_id' invisible='1'/>
+                              <field name='source' invisible='1'/>
+
+                          </group>
+                          <group>
+                            <field name="import_product_date" string='From Date' attrs="{
+                              'invisible':[('operation','!=','import')],
+                              'required':[('operation','=','import')],
+                              }"/>
+                            <field name="to_date" attrs="{
+                              'invisible':[('operation','!=','import')],
+                              'required':[('operation','=','import')],
+                              }"/>
+
+
+                          </group>
+                      </group>
+                      <group>
+                        <div>
+                          <p><b>NOTE</b>:</p>
+                          <ul>
+                          <li attrs="{
+                            'invisible':[('operation','!=','import')],
+                            }">&#160;Import operation will <b>import  new product</b>
+                             in odoo from magento.</li>
+                          <li attrs="{
+                            'invisible':[('operation','!=','update')],
+                            }">&#160;Update operation  will <b>update
+                            previously imported product</b> in Odoo.</li>
+                          </ul>
+                        </div>
+                      </group>
+
+
+
+
+                    </sheet>
+                    <separator colspan="6"/>
+                    <footer>
+                        <button name="import_now" string="Import Now" type="object" class="oe_highlight" />
+                        or
+                        <button special="cancel" string="Cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="import_magento1x_orders_form" model="ir.ui.view">
+            <field name="name">import.magento1x.orders.form</field>
+            <field name="model">import.magento1x.orders</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Import Magento Orders">
+                    <sheet>
+                      <group>
+                        <group>
+                            <field name="channel_id" invisible='1'/>
+
+                            <field name="import_order_date" string='From Date' attrs="{'required':[('source','==','all')]}"/>
+                        </group>
+                         <group attrs="{'invisible':[('source','!=','all')]}">
+                              <field name="source"  invisible='1'/>
+                            <field name="to_date" attrs="{'required':[('source','==','all')]}"/>
+                        </group>
+                        </group>
+
+                    </sheet>
+                    <separator colspan="6"/>
+                    <footer>
+                        <button name="import_now" string="Import Now" type="object" class="oe_highlight" />
+                        or
+                        <button special="cancel" string="Cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="import_magento1x_categories_form" model="ir.ui.view">
+            <field name="name">import.magento1x.categories.form</field>
+            <field name="model">import.magento1x.categories</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Import Magento Categories">
+                    <sheet>
+                        <group  invisible="context.get('active_model')=='multi.channel.sale'">
+                             <group  string='Magento Channel' >
+                                    <field name='channel_id' widget='selection'
+                                        readonly="1"
+
+                                    />
+                            </group>
+                            <group>
+                            </group>
+                        </group>
+                            <group>
+
+                                <group>
+                                    <field name='operation' widget='radio'/>
+                                    <field name='source'/>
+                                     <field
+                                    name="parent_categ_id"
+                                    attrs="{
+                                    'invisible':[('source','==','all')],
+                                    'required':[('source','!=','all')]
+                                    }"/>
+                                </group>
+                                 <group>
+                                    <div>
+                                <p><b>NOTE</b></p>
+                                <p> You can also Import/Update  Category </p>
+                                <ul>
+                                    <li>By Magento Parent Category ID .</li>
+                                </ul>
+                                <p> In case of parent category id filter<br/> only corresponding child will imported. </p>
+
+                            </div>
+                                </group>
+                            </group>
+
+                    </sheet>
+                    <separator colspan="6"/>
+                    <footer>
+                        <button name="import_now" string="Import Now" type="object" class="oe_highlight" />
+                        or
+                        <button special="cancel" string="Cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_import_magento1x_partners" model="ir.actions.act_window">
+            <field name="name">Import Magento Partners</field>
+            <field name="res_model">import.magento1x.partners</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        <record id="action_import_magento1x_products" model="ir.actions.act_window">
+            <field name="name">Import Magento Products</field>
+            <field name="res_model">import.magento1x.products</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        <record id="action_import_magento1x_orders" model="ir.actions.act_window">
+            <field name="name">Import Magento Orders</field>
+            <field name="res_model">import.magento1x.orders</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        <record id="action_import_magento1x_categories" model="ir.actions.act_window">
+            <field name="name">Import Magento Categories</field>
+            <field name="res_model">import.magento1x.categories</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</odoo>
