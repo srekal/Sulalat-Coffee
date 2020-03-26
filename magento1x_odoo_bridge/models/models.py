@@ -178,7 +178,6 @@ class MultiChannelSale(models.Model):
         result.append(("magento1x", "Magento v1.9"))
         return result
 
-    @api.multi
     def test_magento1x_connection(self):
         for obj in self:
             state = 'error'
@@ -323,7 +322,6 @@ class MultiChannelSale(models.Model):
             vals['magento1x_base_uri'] = re.sub('/index.php', '', base_uri.strip(' ').strip('/'))
         return super(MultiChannelSale,self).create(vals)
 
-    @api.multi
     def write(self, vals):
         base_uri = vals.get('magento1x_base_uri')
         if base_uri:
@@ -417,7 +415,6 @@ class MultiChannelSale(models.Model):
                         _logger.info("=do_transfer #2==%r=====%r==%r="%(comment,data,sync_vals))
                     mapping_id.channel_id._create_sync(sync_vals)
 
-    @api.multi
     def import_magento1x_products(self):
         self.ensure_one()
         vals =dict(
@@ -428,7 +425,6 @@ class MultiChannelSale(models.Model):
         obj=self.env['import.magento1x.products'].create(vals)
         return obj.import_now()
 
-    @api.multi
     def import_magento1x_categories(self):
         self.ensure_one()
         vals =dict(
@@ -439,7 +435,6 @@ class MultiChannelSale(models.Model):
         obj=self.env['import.magento1x.categories'].create(vals)
         return obj.import_now()
 
-    @api.multi
     def import_magento1x_attributes_sets(self):
         self.ensure_one()
         vals =dict(
@@ -450,8 +445,6 @@ class MultiChannelSale(models.Model):
         obj=self.env['import.magento1x.attributes.sets'].create(vals)
         return obj.import_now()
 
-
-    @api.multi
     def import_magento1x_partners(self):
         self.ensure_one()
         vals =dict(
@@ -462,7 +455,6 @@ class MultiChannelSale(models.Model):
         obj=self.env['import.magento1x.partners'].create(vals)
         return obj.import_now()
 
-    @api.multi
     def import_magento1x_orders(self):
         self.ensure_one()
         vals =dict(

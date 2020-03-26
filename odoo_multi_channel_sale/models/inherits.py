@@ -78,7 +78,7 @@ class ExtraCategories(models.Model):
                 li.append(i.odoo_category_id)
         return li
 
-    @api.multi
+    
     @api.depends('instance_id')
     def _compute_extra_categories_domain(self):
         for record in self:
@@ -281,7 +281,7 @@ class ProductProduct(models.Model):
             product_attribute_value_id = attribute_value_mapping.odoo_attribute_value_id
         return product_attribute_value_id
 
-    @api.multi
+    
     def check_for_new_attrs(self, template_id, variant):
         context = dict(self._context or {})
         product_template = self.env['product.template']
@@ -351,7 +351,7 @@ class DeliveryCarrier(models.Model):
 class AccountInvoice(models.Model):
     _inherit = "account.invoice"
 
-    @api.multi
+    
     def action_invoice_paid(self):
         self.wk_pre_confirm_paid()
         result = super(AccountInvoice, self).action_invoice_paid()
@@ -366,7 +366,7 @@ class AccountInvoice(models.Model):
         )
         return list(itertools.chain(*data))
 
-    @api.multi
+    
     def wk_pre_confirm_paid(self):
         for invoice in self:
             order_ids = self.wk_get_invoice_order(invoice)
@@ -379,7 +379,7 @@ class AccountInvoice(models.Model):
                                   '%s_pre_confirm_paid' % channel_id.channel)(invoice, mapping_ids)
         return True
 
-    @api.multi
+    
     def wk_post_confirm_paid(self, result):
         for invoice in self:
             order_ids = self.wk_get_invoice_order(invoice)
@@ -396,7 +396,7 @@ class AccountInvoice(models.Model):
 class StockPicking(models.Model):
     _inherit = 'stock.picking'
 
-    @api.multi
+    
     def action_done(self):
         self.ensure_one()
         self.wk_pre_do_transfer()
@@ -404,7 +404,7 @@ class StockPicking(models.Model):
         self.wk_post_do_transfer(result)
         return result
 
-    @api.multi
+    
     def wk_pre_do_transfer(self):
         order_id = self.sale_id
         if order_id:
@@ -416,7 +416,7 @@ class StockPicking(models.Model):
                               '%s_pre_do_transfer' % channel_id.channel)(self, mapping_ids)
         return True
 
-    @api.multi
+    
     def wk_post_do_transfer(self, result):
         order_id = self.sale_id
         if order_id:

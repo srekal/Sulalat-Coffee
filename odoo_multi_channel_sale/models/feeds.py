@@ -101,7 +101,6 @@ class WkFeed(models.Model):
     def get_category_fields(self):
         return copy.deepcopy(CategoryFields)
 
-    @api.multi
     def open_mapping_view(self):
         self.ensure_one()
         res_model = self._context.get('mapping_model')
@@ -140,12 +139,10 @@ class WkFeed(models.Model):
             'target': 'current',
         }
 
-    @api.multi
     def set_feed_state(self, state='done'):
         self.state = state
         return True
 
-    @api.multi
     def get_feed_result(self, feed_type):
         message = ""
         tot = len(self)
@@ -474,7 +471,6 @@ class CategoryFeed(models.Model):
             vals = getattr(self,'get_%s_specific_categ_vals'%channel_id.channel)(channel_id,vals)
         return vals
 
-    @api.multi
     def import_category(self,channel_id):
         message = ""
         update_id = None
@@ -542,7 +538,6 @@ class CategoryFeed(models.Model):
             message=message
         )
 
-    @api.multi
     def import_items(self):
         update_ids = []
         create_ids = []
@@ -903,7 +898,6 @@ class ProductFeed(models.Model):
                 return dict(message=message,state=state)
         return dict(message=message,state=state)
 
-    @api.multi
     def import_product(self,channel_id):
         self.ensure_one()
         message = ""
@@ -1108,7 +1102,6 @@ class ProductFeed(models.Model):
             message=message
         )
 
-    @api.multi
     def import_items(self):
         update_ids = []
         create_ids = []

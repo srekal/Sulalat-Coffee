@@ -30,7 +30,7 @@ class FeedSyncWizard(models.TransientModel):
         string='Feed Type',
         required=True
     )
-	@api.multi
+
 	def sync_feed(self):
 		self.ensure_one()
 		message=''

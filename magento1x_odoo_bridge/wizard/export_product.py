@@ -198,7 +198,6 @@ class ExportMagento1xProducts(models.TransientModel):
 
         )
 
-    @api.multi
     def magento1x_export_templates(self):
         message = ''
         ex_create_ids,ex_update_ids,create_ids,update_ids= [],[],[],[]

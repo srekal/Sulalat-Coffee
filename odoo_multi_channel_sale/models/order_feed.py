@@ -196,7 +196,7 @@ class PartnerFeed(models.Model):
             message=message
         )
 
-    @api.multi
+    
     def import_items(self):
         update_ids=[]
         create_ids=[]
@@ -526,7 +526,7 @@ class OrderFeed(models.Model):
 
         )
 
-    @api.multi
+    
     def  get_taxes_ids(self, line_taxes,channel_id):
         if line_taxes:
             line_taxes=eval(line_taxes)
@@ -603,7 +603,7 @@ class OrderFeed(models.Model):
     def get_order_fields(self):
         return copy.deepcopy(OrderFields)
 
-    @api.multi
+    
     def import_order(self,channel_id):
         message = ""
         update_id=None
@@ -725,7 +725,7 @@ class OrderFeed(models.Model):
             message=message
         )
 
-    @api.multi
+    
     def import_items(self):
         update_ids=[]
         create_ids=[]

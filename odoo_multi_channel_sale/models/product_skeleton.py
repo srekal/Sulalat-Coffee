@@ -43,7 +43,7 @@ class ChannelTemplateMappings(models.Model):
         #     'unique(channel_id, odoo_template_id)',
         #     'Odoo Template ID must be unique for channel template mapping!'),
     ]
-    @api.multi
+
     def unlink(self):
         for record in self:
             if record.store_product_id:

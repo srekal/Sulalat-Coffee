@@ -76,13 +76,13 @@ class MultiChannelSale(models.Model):
         channel_list = []
         return channel_list
 
-    @api.multi
+    
     def test_connection(self):
         self.ensure_one()
         if hasattr(self, 'test_%s_connection' % self.channel):
             return getattr(self, 'test_%s_connection' % self.channel)()
 
-    @api.multi
+    
     def set_to_draft(self):
         self.state = 'draft'
 
@@ -101,7 +101,7 @@ class MultiChannelSale(models.Model):
             'domain': '[]',
         }
 
-    @api.multi
+    
     def open_mapping_view(self):
         self.ensure_one()
         res_model = self._context.get('mapping_model')
@@ -121,7 +121,7 @@ class MultiChannelSale(models.Model):
             'target': 'current',
         }
 
-    @api.multi
+    
     def open_record_view(self):
         self.ensure_one()
         res_model = self._context.get('mapping_model')
@@ -368,7 +368,7 @@ class MultiChannelSale(models.Model):
             elif record == 'customer':self.update_customer_date = current_date
         return True
 
-    @api.multi
+    
     def toggle_enviroment_value(self):
         production = self.filtered(
             lambda channel: channel.environment == 'production')
@@ -376,20 +376,20 @@ class MultiChannelSale(models.Model):
         (self - production).write({'environment': 'production'})
         return True
 
-    @api.multi
+    
     def toggle_debug_value(self):
         enable = self.filtered(lambda channel: channel.debug == 'enable')
         enable.write({'debug': 'disable'})
         (self - enable).write({'debug': 'enable'})
         return True
 
-    @api.multi
+    
     def toggle_active_value(self):
         for record in self:
             record.write({'active': not record.active})
         return True
 
-    @api.multi
+    
     def toggle_enviroment_value(self):
         production = self.filtered(
             lambda channel: channel.environment == 'production')
@@ -397,14 +397,14 @@ class MultiChannelSale(models.Model):
         (self - production).write({'environment': 'production'})
         return True
 
-    @api.multi
+    
     def toggle_debug_value(self):
         enable = self.filtered(lambda channel: channel.debug == 'enable')
         enable.write({'debug': 'disable'})
         (self - enable).write({'debug': 'enable'})
         return True
 
-    @api.multi
+    
     def toggle_active_value(self):
         for record in self:
             record.write({'active': not record.active})
@@ -954,7 +954,7 @@ class MultiChannelSale(models.Model):
         return True
 
 
-    @api.multi
+    
     def open_website_url(self, url, name='Open Website URL'):
         self.ensure_one()
         return {

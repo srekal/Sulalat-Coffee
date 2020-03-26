@@ -17,7 +17,7 @@ class UpdateMappingWizard(models.TransientModel):
 	_description = 'Update Mapping Wizard'
 	need_sync = fields.Selection(
         (('yes', 'Yes'), ('no', 'No')), string='Update Required', default='yes', required=True)
-	@api.multi
+
 	def save_status(self):
 		for recrod in self:
 			context = dict(recrod._context)

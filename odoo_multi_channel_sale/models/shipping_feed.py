@@ -79,7 +79,7 @@ class ShippingFeed(models.Model):
         )
         return self.env['channel.shipping.mappings'].create(vals)
 
-    @api.multi
+    
     def import_item(self):
         self.ensure_one()
         message = ""
@@ -136,7 +136,7 @@ class ShippingFeed(models.Model):
             create_id=create_id
         )
 
-    @api.multi
+    
     def import_items(self):
         mapping_ids = []
         message = ''

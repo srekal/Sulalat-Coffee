@@ -23,7 +23,7 @@ _logger = logging.getLogger(__name__)
 class StockMove(models.Model):
     _inherit = "stock.move"
 
-    @api.multi
+    
     def _action_done(self):
         """ Makes the move done and if all moves are done, it will finish the picking.
         @return:
@@ -78,7 +78,7 @@ class StockMove(models.Model):
         return True
 
     # Extra function to update quantity(s) of product to prestashop`s end.
-    @api.multi
+    
     def multichannel_sync_quantity(self, pick_details):
         """ Method to be overriden by the multichannel modules to provide real time stock
         update feature

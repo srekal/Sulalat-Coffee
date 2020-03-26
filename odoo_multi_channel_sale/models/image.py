@@ -21,7 +21,6 @@ class ProductImage(models.Model):
             vals['name'], vals['extention'] = os.path.splitext(vals['name'])
         return super(ProductImage, self).create(vals)
 
-    @api.multi
     @api.depends('file')
     def oe_get_image(self):
         result = {}
@@ -29,7 +28,6 @@ class ProductImage(models.Model):
         return result
 
 
-    @api.multi
     def oe_set_image(self, _id, value, arg):
         media_repo = self.env['multi.channel.sale'].get_media_repo()
         if media_repo:

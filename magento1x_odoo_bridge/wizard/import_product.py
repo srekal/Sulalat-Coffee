@@ -189,7 +189,7 @@ class Importmagento1xProducts(models.TransientModel):
         if not items:
             message+=fetch_res.get('message')
         return dict(item_ids=items,message=message)
-    @api.multi
+
     def import_now(self):
         create_ids,update_ids,map_create_ids,map_update_ids =[],[],[],[]
         message=''

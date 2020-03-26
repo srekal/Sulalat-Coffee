@@ -179,8 +179,6 @@ class ImportMagento1xattributes(models.TransientModel):
             message = message
         )
 
-
-    @api.multi
     def import_now(self):
         create_ids,update_ids,map_create_ids,map_update_ids=[],[],[],[]
         message=''

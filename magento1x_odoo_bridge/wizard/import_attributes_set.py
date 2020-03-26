@@ -160,8 +160,6 @@ class ImportMagento1xattributes(models.TransientModel):
         AttributesMappping+=res.get('update_ids')
         return AttributesMappping
 
-
-    @api.multi
     def import_now(self):
         """Import magento attributes sets in odoo."""
         create_ids,update_ids,map_create_ids,map_update_ids=[],[],[],[]

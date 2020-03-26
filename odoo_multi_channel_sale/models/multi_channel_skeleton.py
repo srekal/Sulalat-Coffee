@@ -17,7 +17,7 @@ class MultiChannelSkeleton(models.Model):
     _name = "multi.channel.skeleton"
     _description = 'Multi Channel Skeleton'
 
-    @api.multi
+    
     def _get_journal_code(self, string, sep=' '):
         """
         Takes payment method as argumnet and generates a jurnal code.
@@ -36,7 +36,7 @@ class MultiChannelSkeleton(models.Model):
                     return code + str(i)[-5:]
         return code
 
-    @api.multi
+    
     def _get_journal_name(self, string):
         is_exist = self.env['account.journal'].search([('name', '=', string)])
         if is_exist:
@@ -113,7 +113,7 @@ class MultiChannelSkeleton(models.Model):
                 'status_message': status_message
             }
 
-    @api.multi
+    
     def set_order_shipped(self, order_id, **kwargs):
         """Cancel the order in Odoo via requests from XML-RPC
         @param order_id: Odoo Order ID
@@ -405,7 +405,7 @@ class ChannelOrderStates(models.Model):
          'This channel state  already exists !')
     ]
 
-    @api.multi
+    
     @api.constrains('channel_id', 'default_order_state')
     def _check_default_order_state(self):
         for rec in self:

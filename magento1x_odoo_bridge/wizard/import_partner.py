@@ -130,7 +130,6 @@ class ImportMagento1xpartners(models.TransientModel):
             update_ids=update_ids,
         )
 
-    @api.multi
     def import_now(self):
         create_ids,update_ids,map_create_ids,map_update_ids=[],[],[],[]
         message=''

@@ -58,12 +58,12 @@ class ExportTemplates(models.TransientModel):
     _inherit = ['export.operation']
     _name = "export.templates"
 
-    @api.multi
+    
     def export_odoo_products(self):
         if hasattr(self, 'export_%s_templates' % self.channel_id.channel):
             return getattr(self, 'export_%s_templates' % self.channel_id.channel)()
 
-    @api.multi
+    
     def update_odoo_products(self):
         if hasattr(self, 'update_%s_templates' % self.channel_id.channel):
             return getattr(self, 'update_%s_templates' % self.channel_id.channel)()

@@ -32,7 +32,6 @@ class MultiChannelSaleConfig(models.TransientModel):
         default='both',
         help="In Both option the the uniquenes will be wither on sku/Default or UPC/EAN/Barcode usign OR operator and it should be always be given high priority")
 
-    @api.multi
     def set_values(self):
         super(MultiChannelSaleConfig, self).set_values()
         IrDefault = self.env['ir.default'].sudo()

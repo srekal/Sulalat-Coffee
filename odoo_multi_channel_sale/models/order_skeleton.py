@@ -22,7 +22,7 @@ class ChannelOrderMappings(models.Model):
 	order_name = fields.Many2one('sale.order',string='Odoo Order')
 	odoo_partner_id = fields.Many2one(related='order_name.partner_id')
 	store_order_id =  fields.Char('Store Order ID',required=True)
-	@api.multi
+
 	def unlink(self):
 		for record in self:
 			match = record.store_order_id and record.channel_id.match_order_feeds(record.store_order_id)

@@ -50,7 +50,7 @@ class ChannelAccountJournalMappings(models.Model):
 	journal_code =  fields.Char('Journal Code',required=True, related="odoo_journal.code")
 	odoo_journal_id = fields.Integer('Odoo Journal ID',required=True)
 	odoo_journal = fields.Many2one('account.journal',string='Odoo Journal Name', required=True)
-	@api.multi
+
 	def _compute_name(self):
 		for record in self:
 			if record.store_journal_name:
