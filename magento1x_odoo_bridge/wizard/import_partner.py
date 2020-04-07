@@ -27,6 +27,8 @@ Source = [
 class ImportMagento1xpartners(models.TransientModel):
     _inherit = ['import.partners']
     _name = "import.magento1x.partners"
+    _description = "import.magento1x.partners"
+
     @api.model
     def _get_parent_categ_domain(self):
         return self._get_ecom_store_domain()
@@ -34,6 +36,7 @@ class ImportMagento1xpartners(models.TransientModel):
     def _get_magento1x_group(self):
         groups=[('all','All')]
         return groups
+
     source = fields.Selection(Source, required=1, default='all')
     group_id = fields.Selection(
         selection = _get_magento1x_group,
@@ -41,6 +44,7 @@ class ImportMagento1xpartners(models.TransientModel):
         required=1,
         default='all'
     )
+
     @staticmethod
     def _get_magento1x_customer_address_vals(data,customer_id,channel_id,**kwargs):
         res=[]
@@ -67,6 +71,7 @@ class ImportMagento1xpartners(models.TransientModel):
             )
             res+=[vals]
         return res
+
     @staticmethod
     def get_customer_vals(customer_data):
         vals = dict(
@@ -96,6 +101,7 @@ class ImportMagento1xpartners(models.TransientModel):
             add_vals=cls._get_magento1x_customer_address_vals(data,customer_id,channel_id)
             for add_val in add_vals:
                 feed_id = channel_id._create_feed(feed_obj, add_val)
+
     @classmethod
     def _magento1x_import_customer(cls, channel_id,feed_obj,customer_id, data,**kwargs):
         match = channel_id._match_feed(
@@ -112,6 +118,7 @@ class ImportMagento1xpartners(models.TransientModel):
             feed_id=match,
             update=update
         )
+
     @classmethod
     def _magento1x_import_partners(cls,channel_id,feed_obj, items,**kwargs):
         create_ids=[]
@@ -179,6 +186,7 @@ class ImportMagento1xpartners(models.TransientModel):
             'partner',create_ids,update_ids,map_create_ids,map_update_ids
         )
         return self.env['multi.channel.sale'].display_message(message)
+
     @api.model
     def _cron_magento1x_import_partners(self):
         for channel_id in self.env['multi.channel.sale'].search(CHANNELDOMAIN):

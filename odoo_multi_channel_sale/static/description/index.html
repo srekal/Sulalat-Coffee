@@ -1,492 +1,581 @@
 <!-- Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
 <!-- See LICENSE file for full copyright and licensing details. -->
 <!-- "License URL : <https://store.webkul.com/license.html/>" -->
-<section class="oe_container lead">
-	<div class="oe_row oe_spaced" style="max-width: 100%;">
-		<div class="oe_span12">
-			<h1 class="oe_slogan" style="color:#875A7B;">
-				<b>Odoo Multi-channel Sale</b>
-			</h1>
+<header class="oe_spaced mw-100 d-flex flex-column">
+	<h2 class="display-4 text-center font-weight-bold mt-3 mb-2">
+		Odoo Multi-Channel Sale
+	</h2>
+	<span class="text-center font-italic text-muted my-2">
+		"Gateway to connect Multiple Channels with Your Odoo!"
+	</span>
+	<div class="row justify-content-center my-2">
+		<a class="col-auto" href="#" target="_blank" style="width: fit-content;">
+			<img src="configure.png" alt="blog" style="height: 4rem;">
+		</a>
+		<a class="col-auto" href="#" target="_blank" style="width: fit-content;">
+			<img src="tutorial.png" alt="blog" style="height: 4rem;">
+		</a>
+		<a class="col-auto" href="#" target="_blank" style="width: fit-content;">
+			<img src="user-guide.png" alt="blog" style="height: 4rem;">
+		</a>
+	</div>
+	<div
+		class="rounded p-4"
+		style="
+			border-left:6px solid #2A37D7;
+			box-shadow: 0 0 10px 0 rgba(0,0,0,0.16);
+		"
+	>
+		<p>
+			<b>Note</b>: Odoo Multichannel Sale is the base module which needs to be
+			installed first for the other multichannel extensions to work properly.
+			There is no limitation for installing other multichannel extensions.
+		</p>
+	</div>
+</header>
+
+<section class="oe_spaced mw-100">
+	<h2 class="text-center">Connectors</h2>
+	<span class="d-block w-100 text-center text-muted">
+		Make your eCommerce Experience more better with our other Apps.
+	</span>
+	<div id="carousel_bridges" class="carousel slide oe_spaced" data-ride="carousel">
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<div class="row justify-content-center">
+					<div class="col-auto px-5">
+						<div class="d-flex flex-column" style="width: max-content;">
+							<img class="img-thumbnail" src="bridges/amazon.png" alt="amazon_odoo_bridge">
+							<span class="text-center mt-4">Multichannel<br/>Amazon Connector</span>
+						</div>
+					</div>
+					<div class="col-auto px-5">
+						<div class="d-flex flex-column" style="width: max-content;">
+							<img class="img-thumbnail" src="bridges/cscart.png" alt="cscart_odoo_bridge">
+							<span class="text-center mt-4">Multichannel<br/>CS-Cart Connector</span>
+						</div>
+					</div>
+					<div class="col-auto px-5">
+						<div class="d-flex flex-column" style="width: max-content;">
+							<img class="img-thumbnail" src="bridges/ebay.png" alt="ebay_odoo_bridge">
+							<span class="text-center mt-4">Multichannel<br/>Ebay Connector</span>
+						</div>
+					</div>
+					<div class="col-auto px-5">
+						<div class="d-flex flex-column" style="width: max-content;">
+							<img class="img-thumbnail" src="bridges/etsy.png" alt="etsy_odoo_bridge">
+							<span class="text-center mt-4">Multichannel<br/>Etsy Connector</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<div class="row justify-content-center">
+					<div class="col-auto px-5">
+						<div class="d-flex flex-column" style="width: max-content;">
+							<img class="img-thumbnail" src="bridges/flipkart.png" alt="flipkart_odoo_bridge">
+							<span class="text-center mt-4">Multichannel<br/>Flipkart Connector</span>
+						</div>
+					</div>
+					<div class="col-auto px-5">
+						<div class="d-flex flex-column" style="width: max-content;">
+							<img class="img-thumbnail" src="bridges/magento.png" alt="magento_odoo_bridge">
+							<span class="text-center mt-4">Multichannel<br/>Magento Connector</span>
+						</div>
+					</div>
+					<div class="col-auto px-5">
+						<div class="d-flex flex-column" style="width: max-content;">
+							<img class="img-thumbnail" src="bridges/magento2.png" alt="magento2_odoo_bridge">
+							<span class="text-center mt-4">Multichannel<br/>Magento2 Connector</span>
+						</div>
+					</div>
+					<div class="col-auto px-5">
+						<div class="d-flex flex-column" style="width: max-content;">
+							<img class="img-thumbnail" src="bridges/opencart.png" alt="opencart_odoo_bridge">
+							<span class="text-center mt-4">Multichannel<br/>OpenCart Connector</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<div class="row justify-content-center">
+					<div class="col-auto px-5">
+						<div class="d-flex flex-column" style="width: max-content;">
+							<img class="img-thumbnail" src="bridges/prestashop.png" alt="prestashop_odoo_bridge">
+							<span class="text-center mt-4">Multichannel<br/>Prestashob Connector</span>
+						</div>
+					</div>
+					<div class="col-auto px-5">
+						<div class="d-flex flex-column" style="width: max-content;">
+							<img class="img-thumbnail" src="bridges/shopify.png" alt="shopify_odoo_bridge">
+							<span class="text-center mt-4">Multichannel<br/>Shopify Connector</span>
+						</div>
+					</div>
+					<div class="col-auto px-5">
+						<div class="d-flex flex-column" style="width: max-content;">
+							<img class="img-thumbnail" src="bridges/shopware.png" alt="shopware_odoo_bridge">
+							<span class="text-center mt-4">Multichannel<br/>Shopware Connector</span>
+						</div>
+					</div>
+					<div class="col-auto px-5">
+						<div class="d-flex flex-column" style="width: max-content;">
+							<img class="img-thumbnail" src="bridges/woocommerce.png" alt="woocommerce_odoo_bridge">
+							<span class="text-center mt-4">Multichannel<br/>WooCommerce Connector</span>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-		<div class="oe_mt16 oe_span12">
-			<img src="chart.png" width="100%" height="100%"/>
-		</div>
-		<div class="oe_mt16 oe_span12">
-			<p class="text-justify" style="font-size: 18px;">
-				The perfect solution to your multi-channel marketing strategy.
-				Blend your stores on various multiple channels like Amazon, eBay, Etsy and more under the same roof.
-				Manage various multiple E-commerce channels using a single Odoo database.
-				Integrate and Manage every aspect, from order placement to stock management to delivery operations diligently.
-				Import Products, Products categories, customers, shipping methods etc. to Odoo from each channel.
-				Automatic synchronization of data between Odoo and various channels to help you run the operations without delays.
-			</p>
-		</div>
+		<a class="carousel-control-prev" href="#carousel_bridges" role="button" data-slide="prev">
+			<span class="carousel-control-prev-icon">
+				<i class="fa fa-chevron-left fa-2x text-dark"></i>
+			</span>
+		</a>
+		<a class="carousel-control-next" href="#carousel_bridges" role="button" data-slide="next">
+			<span class="carousel-control-next-icon">
+				<i class="fa fa-chevron-right fa-2x text-dark"></i>
+			</span>
+		</a>
 	</div>
 </section>
 
-<section class="oe_container lead">
-	<center>
-		<video autoplay="" controls="" loop="true" muted="" width="90%">
-			<source src="https://www.odoo.com/apps/modules/10.0/odoo_multi_channel_sale/multichannel_sale.mp4" type="video/mp4">
-				<source src="https://www.odoo.com/apps/modules/10.0/odoo_multi_channel_sale/multichannel_sale.mp4" type="video/mp4">
-				</source>
-			</source>
-		</video>
-	</center>
-</section>
-
-<section class="oe_container lead">
-	<div class="oe_row oe_dark oe_spaced">
-		<div class="oe_span12">
-			<h2 class="oe_slogan" style="color:#875A7B;">
-				Data in a glance- One stop solution for your multi-channel marketing strategy
-			</h2>
-		</div>
-		<div class="oe_span12">
-			<ul>
-				<li>
-					<p class="text-justify">
-						Neatly designed Dashboard to overview all the channels integrated with Odoo.
-					</p>
-				</li>
-			</ul>
-		</div>
-		<div class="oe_span6">
-			<ul>
-				<li>
-					<p class="text-justify">
-						Various details of each marketplace/store can be viewed directly from the dashboard.
-					</p>
-				</li>
-				<li>
-					<p class="text-justify">
-						Information about the number of orders placed in the system, Products, product categories and customers can be read separately for each E-commerce channel can be viewed from the dashboard.
-					</p>
-				</li>
-				<li>
-					<p class="text-justify">
-						The Odoo admin can view and manage any detail by clicking on the tab from the dashboard.
-					</p>
-				</li>
-				<li>
-					<p class="text-justify">
-						Sync data from multiple e-commerce channels to Odoo seamlessly.
-					</p>
-				</li>
-				<li>
-					<p class="text-justify">
-						The data can be synchronized between the Odoo database and various e-commerce channels by the click of a button.
-					</p>
-				</li>
-				<li>
-					<p class="text-justify">
-						The Data can also be set to get automatically synced periodically on various channels from Odoo.
-					</p>
-				</li>
-			</ul>
-		</div>
-		<div class="oe_span6">
-			<img src="Odoo_multichannel.gif" width="100%" height="100%"/>
-		</div>
-		<div class="oe_span12">
-			<ul>
-				<li>
-					<p class="text-justify">
-						Moreover, you can upload a CSV file to import/update data to Odoo for sales orders, products, products categories, customers and shipping methods etc.
-					</p>
-				</li>
-			</ul>
-		</div>
+<section class="oe_spaced mw-100 card">
+	<div class="d-flex flex-column p-4">
+		<p>
+			Odoo, a single solution for all your business related problems;
+			it is widely known for its backend functionalities.
+			Whether you want to manage products, orders or inventory;
+			Odoo can do it all perfectly! Hence, Odoo Website and its backend make a perfect combo...
+		</p>
+		<span class="font-weight-bold mt-3">
+			Are you selling out products in other e-commerce/marketplace platforms than Odoo?
+		</span>
+		<p>
+			Yes but worried about how to manage catalogs, inventory,
+			order statuses of all the online stores together in a centralized way! Hurray!
+			No matter what platform or how many platforms you are using to sell the products;
+			still you can manage all backend settings in Odoo.
+		</p>
+		<span class="font-weight-bold mt-3">
+			Here comes Odoo Multichannel Sale for you!
+		</span>
+		<p>
+			Odoo Multichannel Sale helps you to connect multiple
+			E-commerce and Marketplace platforms to your Odoo.
+			Which means, your customers can buy your product(s) or avail your service(s) from the
+			E-commerce/Marketplace platform(s) and you can manage all backend settings from Odoo.
+		</p>
 	</div>
 </section>
 
-<section class="oe_container lead">
-	<div class="oe_row oe_spaced">
-		<div class="oe_span12">
-			<h2 class="text-center oe_slogan" style="color:#875A7B;">
-				Say No To Manual Entry
-			</h2>
-		</div>
-		<div class="oe_span6">
-			<img src="No manual updates2.gif" width="100%" height="100%"/>
-		</div>
-		<div class="oe_span6" style="margin-top: 60px;">
-			<p class="text-justify">
-				No need to enter data manually in Odoo. Simply Import/Update data using CSV file or data like Sale orders, products, Categories, Customers/Partners, and shipping methods from various channels connected to Odoo through our connector.
-			</p>
-		</div>
+<section class="oe_spaced mw-100 card p-4">
+	<div class="d-flex">
+		<img src="icons/feeds.png" alt="feeds">
+		<h3 class="ml-4 align-self-center">
+			Dashboard for Session Information With Better Visualization
+		</h3>
+	</div>
+	<div class="mt-2">
+		<p>
+			There are multiple relational fields in an Odoo form which makes it little complex structure;
+			especially while importing data from other platforms.
+			Hence, to avoid the complication;
+			Feeds are used in Odoo Multichannel Sale.
+		</p>
 	</div>
 </section>
 
-<section class="oe_container lead">
-	<div class="oe_row oe_dark oe_spaced">
-		<div class="oe_span12">
-			<h2 class="text-center oe_slogan" style="color:#875A7B;">
-				Order Management made Easy across multiple E-commerce channels
-			</h2>
-		</div>
-		<div class="oe_span6">
-			<ul>
-				<li>
-					<p class="text-justify">
-						Orders placed on various stores/marketplace can be imported to the Odoo.
-					</p>
-				</li>
-				<li>
-					<p class="text-justify">
-						The order status gets automatically updated on corresponding store/channel once updated in Odoo backend and vice-versa.
-					</p>
-				</li>
-				<li>
-					<p class="text-justify">
-						The orders can be tracked to the channel it originated for better management and delivery.
-					</p>
-				</li>
-			</ul>
-		</div>
-		<div class="oe_span6">
-			<img src="Order Management3.gif" height="100%" width="100%"/>
-		</div>
+<section class="oe_spaced mw-100 card p-4">
+	<div class="d-flex">
+		<img src="icons/sync.png" alt="sync">
+		<h3 class="ml-4 align-self-center">
+			Reduce Laborious Efforts
+		</h3>
+	</div>
+	<div class="mt-2">
+		<p>
+			No need to sync order statuses and inventory manually from
+			E-commerce and Marketplace platforms as now you can opt for Real-time synchronization.
+			Or, you can also import and export the data together with a few simple steps.
+		</p>
 	</div>
 </section>
 
-<section class="oe_container lead">
-	<div class="oe_row oe_spaced">
-		<div class="oe_span12">
-			<h2 class="text-center oe_slogan" style="color:#875A7B;">
-				Inventory Management
-			</h2>
-		</div>
-		<div class="oe_span12">
-			<ul>
-				<li>
-					<p class="text-justify">
-						Real-time stock update on the stores. The Product stock gets automatically updated on the website when changed in Odoo and vice-versa.
-					</p>
-				</li>
-			</ul>
-		</div>
-		<div class="oe_span6">
-			<img src="Inventory-management4.gif" height="100%" width="100%"/>
-		</div>
-		<div class="oe_span6">
-			<ul>
-				<li>
-					<p class="text-justify">
-						An entire inventory management menu designed to fulfill your advanced inventory requirements.
-					</p>
-				</li>
-				<li>
-					<p class="text-justify">
-						Assign and manage warehouses and location from the backend.
-					</p>
-				</li>
-				<li>
-					<p class="text-justify">
-						Manage products and product stock from the same screen for your multiple E-commerce channels.
-					</p>
-				</li>
-			</ul>
-		</div>
-		<div class="oe_span12">
-			<ul>
-				<li>
-					<p class="text-justify">
-						Workout the details of every stock operation for all the E-commerce channels effectively.
-					</p>
-				</li>
-			</ul>
-		</div>
+<section class="oe_spaced mw-100 card p-4">
+	<div class="d-flex">
+		<img src="icons/import.png" alt="import">
+		<h3 class="ml-4 align-self-center">
+			Importing/Exporting Data in Odoo
+		</h3>
 	</div>
-</section>
-
-<section class="oe_container lead">
-	<div class="oe_row oe_dark oe_spaced">
-		<div class="oe_span12">
-			<h2 class="text-center oe_slogan" style="color:#875A7B;">
-				Category Management
-			</h2>
+	<div class="mt-2 row">
+		<div class="text-center col-md-5 col-sm-12 order-md-1">
+			<img class="img-fluid" src="thumbnails/catalogs.png" alt="catalogs">
 		</div>
-		<div class="oe_span6" style="margin-top: 30px;">
-			<p class="text-justify">
-				All the products at your E-commerce Sites or Marketplaces are just one click away to getimported to Odoo and thus can be managed efficiently.
-				Categorize your Products for better search and thus to save time by Importing the categories to Odoo on just single Click!
-			</p>
-		</div>
-		<div class="oe_span6">
-			<img src="Category-Management5.gif" height="100%" width="100%" />
-		</div>
-	</div>
-</section>
-
-<section class="oe_container lead">
-	<div class="oe_row oe_spaced">
-		<div class="oe_span12">
-			<h2 class="text-center oe_slogan" style="color:#875A7B;">
-				Customer Management
-			</h2>
-		</div>
-		<div class="oe_span12">
-			<ul>
-				<li>
-					<p class="text-justify">
-						Maintain a consolidated customer database from your multiple e-commerce channels in single Odoo.
-					</p>
-				</li>
-				<li>
-					<p class="text-justify">
-						The customers can be easily imported from the store/marketplace to Odoo.
-					</p>
-				</li>
-			</ul>
-		</div>
-		<div class="oe_span6">
-			<img src="Customers6.gif" height="100%" width="100%"/>
-		</div>
-		<div class="oe_span6">
-			<ul>
-				<li>
-					<p class="text-justify">
-						Utilize Odoo's entire CRM menu to manage and analyze customers interactions to build customer relationships.
-					</p>
-				</li>
-				<li>
-					<p class="text-justify">
-						Build your extensive customer management system, generate leads, run mail marketing, and much more from a few clicks.
-					</p>
-				</li>
-				<li>
-					<p class="text-justify">
-						Rub promotional campaign for various customers across multiple channels/marketplaces.
-					</p>
-				</li>
-			</ul>
-		</div>
-		<div class="oe_span12">
-			<ul>
-				<li>
-					<p class="text-justify">
-						Any changes made in the details of the customers on the stores can be easily updated in Odoo by the click of a button.
-					</p>
-				</li>
-				<li>
-					<p class="text-justify">
-						The data can also be set to get automatically updated with the help of Cron.
-					</p>
-				</li>
-			</ul>
-		</div>
-	</div>
-</section>
-
-<section class="oe_container lead">
-	<div class="oe_row oe_dark oe_spaced">
-		<div class="oe_span12">
-			<h2 class="text-center oe_slogan" style="color:#875A7B;">
-				Shipping Management
-			</h2>
-		</div>
-		<div class="oe_span6">
-			<ul>
-				<li>
-					<p class="text-justify">
-						Manage and track delivery of the orders across various channels from a single menu.
-					</p>
-				</li>
-				<li>
-					<p class="text-justify">
-						The shipping methods are automatically imported into the Odoo along while importing orders from the stores.
-					</p>
-				</li>
-				<li>
-					<p class="text-justify">
-						Delivery operations and status can be checked from the backend to avoid delays and analyze interruptions.
-					</p>
-				</li>
-			</ul>
-		</div>
-		<div class="oe_span6">
-			<img src="Shipping7.gif" height="100%" width="100%"/>
-		</div>
-	</div>
-</section>
-
-<section class="oe_container lead">
-	<div class="row oe_spaced">
-		<div class="oe_span12">
-			<h2 class="oe_slogan" style="color:#875A7B;">
-				Other Connected Channels:
-			</h2>
-		</div>
-		<div class="oe_dark">
-			<div class="col-md-4 pull-left">
-				<a
-					href  ="https://www.odoo.com/apps/modules/12.0/cscart_odoo_bridge"
-					target="new"
-				>
-					<img
-						alt  ="cscart odoo bridge"
-						class="oe_picture oe_screenshot img-rounded"
-						src  ="https://www.odoo.com/apps/modules/12.0/cscart_odoo_bridge/Banner.png"
-					/>
-				</a>
-			</div>
-			<div class="col-md-4 pull-left">
-				<a
-					href  ="https://www.odoo.com/apps/modules/12.0/prestashop_odoo_bridge"
-					target="new"
-				>
-					<img
-						alt  ="prestashop odoo bridge"
-						class="oe_picture oe_screenshot img-rounded"
-						src  ="https://www.odoo.com/apps/modules/12.0/prestashop_odoo_bridge/Banner.png"
-					/>
-				</a>
-			</div>
-			<div class="col-md-4 pull-left">
-				<a
-					href  ="https://www.odoo.com/apps/modules/12.0/woocommerce_odoo_connector"
-					target="new"
-				>
-					<img
-						alt  ="woocommerce odoo bridge"
-						class="oe_picture oe_screenshot img-rounded"
-						src  ="https://www.odoo.com/apps/modules/12.0/woocommerce_odoo_connector/Banner.png"
-					/>
-				</a>
-			</div>
-			<div class="col-md-4 pull-left">
-				<a
-					href  ="https://www.odoo.com/apps/modules/12.0/etsy_odoo_bridge"
-					target="new"
-				>
-					<img
-						alt  ="etsy odoo bridge"
-						class="oe_picture oe_screenshot img-rounded"
-						src  ="https://www.odoo.com/apps/modules/12.0/etsy_odoo_bridge/Banner.png"
-					/>
-				</a>
-			</div>
-			<div class="col-md-4 pull-left">
-				<a
-					href  ="https://www.odoo.com/apps/modules/12.0/ebay_odoo_bridge"
-					target="new"
-				>
-					<img
-						alt  ="Ebay Odoo Bridge"
-						class="oe_picture oe_screenshot img-rounded"
-						src  ="https://www.odoo.com/apps/modules/12.0/ebay_odoo_bridge/banner.png"
-					/>
-				</a>
-			</div>
-			<div class="col-md-4 pull-left">
-				<a
-					href  ="https://www.odoo.com/apps/modules/12.0/amazon_odoo_bridge"
-					target="new"
-				>
-					<img
-						alt  ="amazon odoo bridge"
-						class="oe_picture oe_screenshot img-rounded"
-						src  ="https://www.odoo.com/apps/modules/12.0/amazon_odoo_bridge/Banner.png"
-					/>
-				</a>
-			</div>
-			<div class="col-md-4 pull-left">
-				<a
-					href  ="https://www.odoo.com/apps/modules/12.0/magento1x_odoo_bridge"
-					target="new"
-				>
-					<img
-						alt  ="magento1x odoo bridge"
-						class="oe_picture oe_screenshot img-rounded"
-						src  ="https://www.odoo.com/apps/modules/12.0/magento1x_odoo_bridge/Banner.png"
-					/>
-				</a>
-			</div>
-			<div class="col-md-4 pull-left">
-				<a
-					href  ="https://www.odoo.com/apps/modules/12.0/magento2x_odoo_bridge"
-					target="new"
-				>
-					<img
-						alt  ="magento2 odoo bridge"
-						class="oe_picture oe_screenshot img-rounded"
-						src  ="https://www.odoo.com/apps/modules/12.0/magento2x_odoo_bridge/Banner.png"
-					/>
-				</a>
-			</div>
-			<div class="col-md-4 pull-left">
-				<a
-					href  ="https://www.odoo.com/apps/modules/12.0/csv_odoo_bridge"
-					target="new"
-				>
-					<img
-						alt  ="csv odoo bridge"
-						class="oe_picture oe_screenshot img-rounded"
-						src  ="https://www.odoo.com/apps/modules/12.0/csv_odoo_bridge/Banner.png"
-					/>
-				</a>
-			</div>
-		</div>
-	</div>
-</section>
-
-<section class="oe_container lead">
-	<div class="oe_row oe_spaced">
-		<div>
-			<h2 class="oe_slogan">
-				Complimentary Support
-			</h2>
+		<div class="col-md-7 col-sm-12 p-5 order-md-2">
+			<h4>Importing/Exporting Catalogs</h4>
 			<p>
-				You will get 90 days free support for any doubt, queries, and bug fixing (excluding data recovery) or any type of issue related to this module.
+				Catalogs consist of data like products, categories and attributes.
+				You can simply import catalogs manually or with the help of cron scheduler.
+				Export all catalogs together from other channels to your Odoo.
+				You can also export selected catalogs.
 			</p>
 		</div>
-		<div>
-			<h2 class="text-center oe_slogan">
-				Help and Support
-			</h2>
+	</div>
+	<div class="mt-2 row">
+		<div class="text-center col-md-5 col-sm-12 order-md-2">
+			<img class="img-fluid" src="thumbnails/order.png" alt="order">
 		</div>
-		<div class="oe_slogan oe_spaced text-center">
-			<a
-				href       ="https://webkul.uvdesk.com/en/customer/create-ticket/"
-				onmouseout ="this.style.color='#7c7bad'"
-				onmouseover="this.style.color='#AC1EE0'"
-				style      ="color:#7c7bad;"
-				title      ="Get Instant Help !"
-			>
-				<i class="fa fa-life-ring"/>
-				Help
-			</a>
-			<a
-				href       ="https://webkul.uvdesk.com/en/customer/create-ticket/"
-				onmouseout ="this.style.color='#7c7bad'"
-				onmouseover="this.style.color='#AC1EE0'"
-				style      ="color:#7c7bad;"
-				title      ="Get Instant Support!"
-			>
-				<i class="fa fa-ticket"/>
-				Support
-			</a>
-			<a
-				href       ="https://webkul.uvdesk.com/en/customer/create-ticket/"
-				onmouseout ="this.style.color='#7c7bad'"
-				onmouseover="this.style.color='#AC1EE0'"
-				style      ="color:#7c7bad;"
-				title      ="Request Features now !"
-			>
-				<i class="fa fa-check-circle"/>
-				Request new Features
-			</a>
+		<div class="col-md-7 col-sm-12 p-5 order-md-1">
+			<h4>Importing Orders to Odoo</h4>
+			<p>
+				You can import Sale orders along with associated customers and their details;
+				also import Payment methods, shipping methods, and currency.
+				You can Import these data manually or via the cron scheduler.
+				Only order status will be exported from Odoo to other channels.
+				You can export Order Statuses manually as well as automatically.
+			</p>
+		</div>
+	</div>
+	<div class="mt-2 row">
+		<div class="text-center col-md-5 col-sm-12 order-md-1">
+			<img class="img-fluid" src="thumbnails/inventory.png" alt="inventory">
+		</div>
+		<div class="col-md-7 col-sm-12 p-5 order-md-2">
+			<h4>Importing Inventory to Odoo</h4>
+			<p>
+				Inventory is updated first time automatically in Odoo when the product is imported.
+				After that, there is real time synchronization of inventory.
+			</p>
 		</div>
 	</div>
 </section>
+
+<section class="oe_spaced mw-100 card p-4">
+	<div class="d-flex">
+		<img src="icons/dashboard.png" alt="dashboard">
+		<h3 class="ml-4 align-self-center">
+			Refurbished Dynamic Dashboard
+		</h3>
+	</div>
+	<div class="mt-2 row">
+		<div class="text-center col-md-5 col-sm-12 order-md-2">
+			<img class="img-fluid" src="thumbnails/dashboard.png" alt="order">
+		</div>
+		<div class="col-md-7 col-sm-12 p-5 order-md-1">
+			<ul>
+				<li>Introduced a dynamic dashboard to track the data of all the connected channels to your Odoo.</li>
+				<li>Import/Export the data of any channel directly from the dashboard.</li>
+				<li>Well-designed Donut Chart and Line Graph to analyze the data.</li>
+				<li>The dashboard also offers Clickable tabs and data cards.</li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+<section class="oe_spaced mw-100">
+	<h3 class="font-weight-bold">
+		Key Features
+	</h3>
+	<span class="mb-2">
+		Below is the detailed list of features for Odoo Multichannel Sale module
+	</span>
+	<div class="row no-gutters mw-100 py-2">
+		<div class="col-md-6 col-sm-12 pb-2 pb-md-0 pr-md-2">
+			<div class="card oe_padded h-100" style="min-height:150px">
+				<h4 class="pl-4">
+					Connect Multiple Channels to Single Odoo
+				</h4>
+				<ul class="mx-auto w-100" style="list-style-type:square">
+					<li>Connect your Odoo with as many E-commerce/Marketplace Platforms you want</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-md-6 col-sm-12 pt-2 pt-md-0 pl-md-2">
+			<div class="card oe_padded h-100" style="min-height:150px">
+				<h4 class="pl-4">
+					Cron to Schedule the Functions
+				</h4>
+				<ul class="mx-auto w-100" style="list-style-type:square">
+					<li>Cron runs to evaluate the feeds in the scheduled time</li>
+					<li>After a scheduled time, cron automatically deletes the synchronization history</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="row no-gutters mw-100 py-2">
+		<div class="col-md-6 col-sm-12 pb-2 pb-md-0 pr-md-2">
+			<div class="card oe_padded h-100" style="min-height:150px">
+				<h4 class="pl-4">
+					Simplified Import Function
+				</h4>
+				<ul class="mx-auto w-100" style="list-style-type:square">
+					<li>Common Import Button for all Channels</li>
+					<li>
+						All you need to do is select the Channel Id(Marketplace/E-commerce) and
+						Object(you want to import)
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-md-6 col-sm-12 pt-2 pt-md-0 pl-md-2">
+			<div class="card oe_padded h-100" style="min-height:150px">
+				<h4 class="pl-4">
+					Streamlined Export Function from All the Channels
+				</h4>
+				<ul class="mx-auto w-100" style="list-style-type:square">
+					<li>Common Export Button for all Channels</li>
+					<li>
+						Select the Channel Id(Marketplace/E-commerce) and
+						Object(you want to export)
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="row no-gutters mw-100 py-2">
+		<div class="col-md-6 col-sm-12 pb-2 pb-md-0 pr-md-2">
+			<div class="card oe_padded h-100" style="min-height:150px">
+				<h4 class="pl-4">
+					Centralised Location to Store Data in Simplified Form
+				</h4>
+				<ul class="mx-auto w-100" style="list-style-type:square">
+					<li>Introduced Feeds to Store Data in Text Form</li>
+					<li>Feeds get automatically deleted once the related record is created in Odoo</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-md-6 col-sm-12 pt-2 pt-md-0 pl-md-2">
+			<div class="card oe_padded h-100" style="min-height:150px">
+				<h4 class="pl-4">
+					Track All The Connected Channels from the Dashboard
+				</h4>
+				<ul class="mx-auto w-100" style="list-style-type:square">
+					<li>See the total number of Connected Channels from the top</li>
+					<li>Click on the Count to scroll down to view the channels which are connected</li>
+					<li>
+						Green Dot in the Channel Icon Shows the Connectivity;
+						On the contrary, red depicts the disconnectivity
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="row no-gutters mw-100 py-2">
+		<div class="col-md-6 col-sm-12 pb-2 pb-md-0 pr-md-2">
+			<div class="card oe_padded h-100" style="min-height:150px">
+				<h4 class="pl-4">
+					Donut Chart to Analyze the data of All Channels
+				</h4>
+				<ul class="mx-auto w-100" style="list-style-type:square">
+					<li>Drop down to Select the Data Type (Order, Product, Category and Customer)</li>
+					<li>Track the data of all channels from the chart</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-md-6 col-sm-12 pt-2 pt-md-0 pl-md-2">
+			<div class="card oe_padded h-100" style="min-height:150px">
+				<h4 class="pl-4">
+					Line Graph to Analyze the data of All Channels
+				</h4>
+				<ul class="mx-auto w-100" style="list-style-type:square">
+					<li>Drop down to Select the Data Type (Order, Product, Category and Customer)</li>
+					<li>Select the time period to show data(weekly or monthly)</li>
+					<li>Track the data of all channels from the Line Graph</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="row no-gutters mw-100 py-2">
+		<div class="col-md-6 col-sm-12 pb-2 pb-md-0 pr-md-2">
+			<div class="card oe_padded h-100" style="min-height:150px">
+				<h4 class="pl-4">
+					Clickable Data Cards for the Details of the Channels
+				</h4>
+				<ul class="mx-auto w-100" style="list-style-type:square">
+					<li>Channel Data Cards directs you to the dashboard of the selected channel</li>
+					<li>View the imported Product, Category, Order and Customers in the Tabs</li>
+					<li>The tabs are clickable and directs you to the respective mapping</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-md-6 col-sm-12 pt-2 pt-md-0 pl-md-2">
+			<div class="card oe_padded h-100" style="min-height:150px">
+				<h4 class="pl-4">
+					Gateway to the Multichannel Extensions’ Dashboard
+				</h4>
+				<ul class="mx-auto w-100" style="list-style-type:square">
+					<li>
+						Single click in the Odoo Multichannel Sale
+						Dashboard can take you to its extensions’ dashboard
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="card oe_spaced mw-100">
+	<div class="card-header p-0">
+		<ul class="nav nav-tabs justify-content-center pt-1" role="tablist">
+			<li class="nav-item">
+				<a class="nav-link active" id="dashboard-tab" data-toggle="tab" href="#dashboard" role="tab" aria-controls="dashboard" aria-selected="true">
+					Dashboard
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" id="configuration-tab" data-toggle="tab" href="#configuration" role="tab" aria-controls="configuration" aria-selected="false">
+					Configuration
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" id="backend-tab" data-toggle="tab" href="#backend" role="tab" aria-controls="backend" aria-selected="false">
+					Backend
+				</a>
+			</li>
+		</ul>
+	</div>
+	<div class="card-body tab-content text-center p-0">
+		<div class="tab-pane fade show active" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+			<div class="card">
+				<h3 class="card-header my-0">
+					Quick View to the Enhanced Dashboard
+				</h3>
+				<div class="card-header">
+					Track the data via the Data Cards, Pie Chart
+				</div>
+				<div class="card-body p-0">
+					<a class="oe_pic_ctr" href="screenshots/0.png" target="_blank">
+						<img class="oe_picture" src="screenshots/0.png" alt="screenshot">
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="tab-pane fade" id="configuration" role="tabpanel" aria-labelledby="configuration-tab">
+			<div class="card">
+				<h3 class="card-header my-0">
+					Instance Specific Configurations
+				</h3>
+				<div class="card-header">
+					Configure the instances
+				</div>
+				<div class="card-body p-0">
+					<a class="oe_pic_ctr" href="screenshots/1.png" target="_blank">
+						<img class="oe_picture" src="screenshots/1.png" alt="screenshot">
+					</a>
+				</div>
+				<div class="card-body p-0">
+					<a class="oe_pic_ctr" href="screenshots/2.png" target="_blank">
+						<img class="oe_picture" src="screenshots/2.png" alt="screenshot">
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="tab-pane fade" id="backend" role="tabpanel" aria-labelledby="backend-tab">
+			<div class="card">
+				<h3 class="card-header my-0">
+					Mappings
+				</h3>
+				<div class="card-body p-0">
+					<a class="oe_pic_ctr" href="screenshots/3.png" target="_blank">
+						<img class="oe_picture" src="screenshots/3.png" alt="screenshot">
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<footer class="oe_container">
+	<div class="container text-center font-weight-bold mt16" style="color:#333333;font-size:26px;">
+		Support
+	</div>
+	<div class="container text-center mt8" style="color:#555555;font-size:18px;">
+		<p style="font-weight:400;">Get immediate support for any of your query</p>
+	</div>
+	<div class="my-4">
+		<!-- <div class="row">
+			<div class="offset-md-2 col-md-8" style="background:#FAFAFA;border:1px solid #E2E2E2;">
+				<div class="row ml0 mr0">
+					<div class="text-center pt16 pb16 col-md-1">
+						<img src="booking-commerce.svg" alt="booking-ecommerce" width="60" height="60">
+					</div>
+					<div
+						class="col-md-8 font-weight-bold"
+						style="color:#394049;font-size:14px;line-height:22px;padding-left:4%;margin-top:3%;"
+					>
+						<p style="font-weight:400;">
+							Schedule one to one live support from one of our best executive.
+						</p>
+					</div>
+					<div class="col-md-3 text-right" style="margin-top:4%;">
+						<a
+							class="btn btn-lg text-center"
+							href="https://webkul.uvdesk.com/en/customer/create-ticket/"
+							target="_blank"
+							style="background:#FCFDFD;border:1px solid#C4CDD5;font-size:14px;color:#454C54;"
+						>
+							Schedule booking
+						</a>
+					</div>
+				</div>
+				<div class="row ml0 mr0 mb16">
+					<div class="col-md-12 text-right" style="font-size:11px;color:#777777;line-height:16px;">
+						We book via <span style="color:#222;">Booking commerce</span> app for creating bookings
+					</div>
+				</div>
+			</div>
+		</div> -->
+		<div class="row">
+			<div class="offset-md-2 col-md-8" style="background:#FAFAFA;border:1px solid #E2E2E2;">
+				<div class="row ml0 mr0">
+					<div class="text-center pt16 pb16 col-md-1">
+						<img src="uvdesk.svg" alt="Not found" width="60" height="60">
+					</div>
+					<div
+						class="col-md-8 font-weight-bold"
+						style="color:#394049;font-size:14px;line-height:22px;padding-left:4%;margin-top:3%;"
+					>
+						<p style="font-weight:400;">
+							If you have any query or facing any problem regarding this or
+							any app then please create ticket for it.
+						</p>
+					</div>
+					<div class="col-md-3 text-right" style="margin-top:4%;">
+						<a
+							class="btn btn-lg text-center"
+							href="https://webkul.uvdesk.com/en/customer/create-ticket/"
+							target="_blank"
+							style="
+								background: rgb(252, 253, 253) none repeat scroll 0% 0%;
+								border: 1px solid rgb(196, 205, 213);
+								font-size: 14px; color: rgb(69, 76, 84);
+								position: relative;
+								overflow: hidden;
+							"
+						>
+							Create ticket
+						</a>
+					</div>
+				</div>
+				<div class="row ml0 mr0 mb16">
+					<div class="col-md-12 text-right" style="font-size:11px;color:#777777;line-height:16px;">
+						We use
+						<span style="color:#151515;"> UVdesk helpdesk </span>
+						app for Managing Queries &amp; Support
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
 
 <section class="oe_container lead">
 	<div class="oe_span12">
 	<!-- Piwik Image Tracker-->
 		<img
 			alt  ="" style="border:0"
-			src  ="http://odooimg.webkul.com/analytics/piwik/piwik.php?idsite=3&amp;rec=1&amp;action_name=ODOO-MULTI-CHANNEL-SALE&amp;url=https://apps.openerp.com/apps/modules/12.0/odoo_multi_channel_sale&amp;uid=odoo_multi_channel_sale"
+			src  ="http://odooimg.webkul.com/analytics/piwik/piwik.php?idsite=3&amp;rec=1&amp;action_name=ODOO-MULTI-CHANNEL-SALE&amp;url=https://apps.odoo.com/apps/modules/13.0/odoo_multi_channel_sale&amp;uid=odoo_multi_channel_sale"
 		/>
 	<!-- End Piwik -->
 	</div>

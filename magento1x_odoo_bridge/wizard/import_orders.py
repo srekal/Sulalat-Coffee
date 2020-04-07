@@ -24,11 +24,14 @@ OrderStatus = [
 class ImportOrders(models.TransientModel):
     _inherit = ['import.orders']
     _name = 'import.magento1x.orders'
+    _description = 'import.magento1x.orders'
+
     status = fields.Selection(
         OrderStatus,
         required=1,
         default='all'
     )
+
     def import_products(self,product_tmpl_ids,channel_id):
         product_tmpl_ids =[str(pt) for pt in product_tmpl_ids]
         mapping_obj = self.env['channel.product.mappings']

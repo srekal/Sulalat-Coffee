@@ -15,8 +15,9 @@ _logger = logging.getLogger(__name__)
 class ImportMagento1xattributes(models.TransientModel):
     _inherit = ['channel.operation']
     _name = "import.magento1x.attributes.sets"
+    _description = "import.magento1x.attributes.sets"
 
-            
+
     @staticmethod
     def get_mage1x_attribute_set_vals(data,**kwargs):
         """Parse  data in odoo format and return as dict vals ."""
@@ -83,12 +84,12 @@ class ImportMagento1xattributes(models.TransientModel):
         attributes_mapping = self._magento1x_import_attributes(channel_id, attributes,**kwargs)
         odoo_attribute_ids = attributes_mapping.mapped('odoo_attribute_id')
         return odoo_attribute_ids
-        
-        
 
 
 
-    
+
+
+
 
     def _magento1x_import_attribute_sets(self, set_obj, channel_id, items,**kwargs):
         """Import attributes sets in odoo.
@@ -131,10 +132,7 @@ class ImportMagento1xattributes(models.TransientModel):
     @api.model
     def _magento1x_import_attributes(self, channel_id, attributes,**kwargs):
         """Import magento attributes in odoo."""
-        
 
-        
-        
         ImportMagento2xAttributes = self.env['import.magento1x.attributes']
         AttributesMappping = self.env['channel.attribute.mappings']
         Attribute = self.env['product.attribute']
@@ -142,8 +140,6 @@ class ImportMagento1xattributes(models.TransientModel):
         # Create import.magento1x.attributes instance with source=all and operation=import.
         vals =dict(
             channel_id=channel_id.id,
-            source='all',
-            operation= 'import',
         )
         record =ImportMagento2xAttributes.create(vals)
 
@@ -160,6 +156,7 @@ class ImportMagento1xattributes(models.TransientModel):
         AttributesMappping+=res.get('update_ids')
         return AttributesMappping
 
+
     def import_now(self):
         """Import magento attributes sets in odoo."""
         create_ids,update_ids,map_create_ids,map_update_ids=[],[],[],[]
@@ -174,7 +171,7 @@ class ImportMagento1xattributes(models.TransientModel):
             if not session:
                 message+=res.get('message')
             else:
-        
+
                 fetch_res =channel_id._fetch_magento1x_product_attributes_sets(session=session,client=client)
                 attribute_sets = fetch_res.get('data', {})
                 message+= fetch_res.get('message','')
@@ -216,9 +213,7 @@ class ImportMagento1xattributes(models.TransientModel):
 
         for channel_id in self.env['multi.channel.sale'].search(CHANNELDOMAIN):
             vals =dict(
-                channel_id=channel_id.id,
-                source='all',
-                operation= 'import',
+                channel_id=channel_id.id
             )
             obj=self.create(vals)
             # It's time to import.

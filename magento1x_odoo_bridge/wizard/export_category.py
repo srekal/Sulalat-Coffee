@@ -143,6 +143,7 @@ class exportmagento1xcategories(models.TransientModel):
 
         )
 
+
     def magento1x_export_categories(self):
         message = ''
         ex_create_ids,ex_update_ids,create_ids,update_ids= [],[],[],[]

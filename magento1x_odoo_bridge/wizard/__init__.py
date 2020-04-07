@@ -13,3 +13,4 @@ from . import import_partner
 from . import import_product
 from . import export_category
 from . import export_product
+# from . import import_operation

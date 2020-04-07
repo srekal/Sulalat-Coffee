@@ -14,6 +14,7 @@ _logger = logging.getLogger(__name__)
 class ImportMagento1xattributes(models.TransientModel):
     _inherit = ['channel.operation']
     _name = "import.magento1x.attributes"
+    _description = "import.magento1x.attributes"
 
 
     @staticmethod
@@ -163,7 +164,7 @@ class ImportMagento1xattributes(models.TransientModel):
             options = attribute_info.get('options')
             _logger.info("=options==%r===="%(options))
 
-            if mapping_id and len(options):
+            if mapping_id and options and len(options):
                 self._magento1x_import_attribute_values(
                     attribute_mapping_id = mapping_id,
                     options = options,
@@ -178,6 +179,7 @@ class ImportMagento1xattributes(models.TransientModel):
             update_ids=update_ids,
             message = message
         )
+
 
     def import_now(self):
         create_ids,update_ids,map_create_ids,map_update_ids=[],[],[],[]

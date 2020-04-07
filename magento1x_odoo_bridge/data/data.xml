@@ -14,17 +14,19 @@
         <record forcecreate='True'  model="multi.channel.sale" id="magento1x_channel" >
             <field name="name">Magento 1x</field>
             <field name="channel">magento1x</field>
-            <field name="discount_product_id" 
-                ref='odoo_multi_channel_sale.discount_product'/>
-            <field name="sku_sequence_id" 
-                ref='odoo_multi_channel_sale.product_sequence_id'/>
-            <field name="delivery_product_id"
-                ref='odoo_multi_channel_sale.delivery_product'/>
+            <!-- <field name="discount_product_id" 
+                ref='odoo_multi_channel_sale.discount_product'/> -->
+            <!-- <field name="sku_sequence_id" 
+                ref='odoo_multi_channel_sale.product_sequence_id'/> -->
+            <!-- <field name="delivery_product_id"
+                ref='odoo_multi_channel_sale.delivery_product'/> -->
             <field name="magento1x_api_username">webkulapi</field>
             <field name="magento1x_api_key">webkulapi</field>
-            <field name="magento1x_base_uri">http://192.168.1.248/magento/1.9.2.4/test1/magento</field>
+            <field name="magento1x_base_uri">http://example.com</field>
                 <field name="crm_team_id"
                 ref='team_sales_magento1x'/>
+            <field name="color">#f46f25</field>
+            <field name="image" type="base64" file="magento1x_odoo_bridge/static//src/img/magento1x-72x72.png"/>
         </record>
 
         <record id="pending_order_states" forcecreate='True' model="channel.order.states">

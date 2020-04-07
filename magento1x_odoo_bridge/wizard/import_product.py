@@ -36,6 +36,8 @@ OdooType = [
 class Importmagento1xProducts(models.TransientModel):
     _inherit = ['import.templates']
     _name = "import.magento1x.products"
+    _description = "import.magento1x.products"
+
     status =  fields.Selection(Status, required=1, default='all')
     type = fields.Selection(Type, required=1, default='all')
 
@@ -139,6 +141,7 @@ class Importmagento1xProducts(models.TransientModel):
                 store_product_ids = set(store_product_ids)-set(match_store_product_ids)
         qty_data = channel_id._fetch_magento1x_qty_data(product_ids=list(set(store_product_ids)),**kwargs)
         return qty_data
+
     def _magento1x_import_products(self,channel_id,items,condition_type,**kwargs):
         create_ids=[]
         update_ids=[]
@@ -189,7 +192,6 @@ class Importmagento1xProducts(models.TransientModel):
         if not items:
             message+=fetch_res.get('message')
         return dict(item_ids=items,message=message)
-
     def import_now(self):
         create_ids,update_ids,map_create_ids,map_update_ids =[],[],[],[]
         message=''

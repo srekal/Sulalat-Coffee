@@ -4,69 +4,65 @@
 <!-- "License URL : <https://store.webkul.com/license.html/>" -->
 
 <odoo>
-  <data>
 
-   <record id="cron_import_categories_from_magento1x" forcecreate='True' model="ir.cron">
-      <field name="name">Magento1x - Import Categories</field>
-      <field eval="False" name="active"/>
-      <field name="user_id" ref="base.user_root"/>
-      <field name="interval_number">1500</field>
-      <field name="interval_type">minutes</field>
-      <field name="numbercall">-1</field>
-      <field eval="'import.magento1x.categories'" name="model"/>
-      <field name="model_id" ref="model_import_magento1x_categories"/>
-      <field name="state">code</field>
-      <field name="code">model._cron_magento1x_import_categories()</field>
+    <record id="cron_import_categories_from_magento1x" forcecreate='True' model="ir.cron">
+        <field name="name">Magento1x - Import Categories</field>
+        <field name="active" eval="False"/>
+        <field name="user_id" ref="base.user_root"/>
+        <field name="interval_number">1500</field>
+        <field name="interval_type">minutes</field>
+        <field name="numbercall">-1</field>
+        <field name="model_id" ref="model_import_magento1x_categories"/>
+        <field name="state">code</field>
+        <field name="code">model._cron_magento1x_import_categories()</field>
     </record>
 
     <record id="cron_import_partners_from_magento1x" forcecreate='True' model="ir.cron">
-      <field name="name">Magento1x - Import Partner</field>
-      <field eval="False" name="active"/>
-      <field name="user_id" ref="base.user_root"/>
-      <field name="interval_number">1520</field>
-      <field name="interval_type">minutes</field>
-      <field name="numbercall">-1</field>
-      <field name="model_id" ref="model_import_magento1x_partners"/>
-      <field name="state">code</field>
-      <field name="code">model._cron_magento1x_import_partners()</field>      
+        <field name="name">Magento1x - Import Partner</field>
+        <field name="active" eval="False"/>
+        <field name="user_id" ref="base.user_root"/>
+        <field name="interval_number">1520</field>
+        <field name="interval_type">minutes</field>
+        <field name="numbercall">-1</field>
+        <field name="model_id" ref="model_import_magento1x_partners"/>
+        <field name="state">code</field>
+        <field name="code">model._cron_magento1x_import_partners()</field>      
     </record>
 
     <record id="cron_import_products_from_magento1x" forcecreate='True' model="ir.cron">
-      <field name="name">Magento1x - Import Product</field>
-      <field eval="False" name="active"/>
-      <field name="user_id" ref="base.user_root"/>
-      <field name="interval_number">1500</field>
-      <field name="interval_type">minutes</field>
-      <field name="numbercall">-1</field>
-      <field name="model_id" ref="model_import_magento1x_products"/>
-      <field name="state">code</field>
-      <field name="code">model._cron_magento1x_import_products()</field>
+        <field name="name">Magento1x - Import Product</field>
+        <field name="active" eval="False"/>
+        <field name="user_id" ref="base.user_root"/>
+        <field name="interval_number">1500</field>
+        <field name="interval_type">minutes</field>
+        <field name="numbercall">-1</field>
+        <field name="model_id" ref="model_import_magento1x_products"/>
+        <field name="state">code</field>
+        <field name="code">model._cron_magento1x_import_products()</field>
     </record>
 
     <record id="cron_import_orders_from_magento1x" forcecreate='True' model="ir.cron">
-      <field name="name">Magento1x - Import Order</field>
-      <field eval="False" name="active"/>
-      <field name="user_id" ref="base.user_root"/>
-      <field name="interval_number">1520</field>
-      <field name="interval_type">minutes</field>
-      <field name="numbercall">-1</field>
-      <field name="model_id" ref="model_import_magento1x_orders"/>
-      <field name="state">code</field>
-      <field name="code">model._cron_magento1x_import_orders()</field>
+        <field name="name">Magento1x - Import Order</field>
+        <field name="active" eval="False"/>
+        <field name="user_id" ref="base.user_root"/>
+        <field name="interval_number">1520</field>
+        <field name="interval_type">minutes</field>
+        <field name="numbercall">-1</field>
+        <field name="model_id" ref="model_import_magento1x_orders"/>
+        <field name="state">code</field>
+        <field name="code">model._cron_magento1x_import_orders()</field>
     </record>
 
     <record id="cron_import_orders_status_from_magento1x" forcecreate='True' model="ir.cron">
-      <field name="name">Magento1x - Import Order Status</field>
-      <field eval="False" name="active"/>
-      <field name="user_id" ref="base.user_root"/>
-      <field name="interval_number">1520</field>
-      <field name="interval_type">minutes</field>
-      <field name="numbercall">-1</field>
-      <field name="model_id" ref="model_import_magento1x_orders"/>
-      <field name="state">code</field>
-      <field name="code">model._cron_magento1x_import_orders_status()</field>
+        <field name="name">Magento1x - Import Order Status</field>
+        <field name="active" eval="False"/>
+        <field name="user_id" ref="base.user_root"/>
+        <field name="interval_number">1520</field>
+        <field name="interval_type">minutes</field>
+        <field name="numbercall">-1</field>
+        <field name="model_id" ref="model_import_magento1x_orders"/>
+        <field name="state">code</field>
+        <field name="code">model._cron_magento1x_import_orders_status()</field>
     </record>
 
-
-  </data>
 </odoo>

@@ -11,7 +11,6 @@
             <field name="arch" type="xml">
                 <form string="Import Magento Partners">
                     <sheet>
-
                         <group>
                             <group>
                                 <field name='operation'  invisible='1'/>
@@ -27,8 +26,6 @@
                                 'invisible':[('operation','!=','import')],
                                 'required':[('operation','=','import')],
                                 }"/>
-
-
                             </group>
                         </group>
                         <group>
@@ -188,28 +185,24 @@
         <record id="action_import_magento1x_partners" model="ir.actions.act_window">
             <field name="name">Import Magento Partners</field>
             <field name="res_model">import.magento1x.partners</field>
-            <field name="view_type">form</field>
             <field name="view_mode">form</field>
             <field name="target">new</field>
         </record>
         <record id="action_import_magento1x_products" model="ir.actions.act_window">
             <field name="name">Import Magento Products</field>
             <field name="res_model">import.magento1x.products</field>
-            <field name="view_type">form</field>
             <field name="view_mode">form</field>
             <field name="target">new</field>
         </record>
         <record id="action_import_magento1x_orders" model="ir.actions.act_window">
             <field name="name">Import Magento Orders</field>
             <field name="res_model">import.magento1x.orders</field>
-            <field name="view_type">form</field>
             <field name="view_mode">form</field>
             <field name="target">new</field>
         </record>
         <record id="action_import_magento1x_categories" model="ir.actions.act_window">
             <field name="name">Import Magento Categories</field>
             <field name="res_model">import.magento1x.categories</field>
-            <field name="view_type">form</field>
             <field name="view_mode">form</field>
             <field name="target">new</field>
         </record>

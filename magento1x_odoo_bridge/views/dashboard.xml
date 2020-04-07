@@ -9,14 +9,14 @@
             <field name="model">multi.channel.sale</field>
             <field name="inherit_id" ref="odoo_multi_channel_sale.multi_channel_view_kanban"/>
             <field name="arch" type="xml">
-                <xpath expr="//div[contains(@class,'wk_o_project_kanban_main')]//div[@class='o_kanban_card_content o_visible oe_kanban_global_click']" position="inside">
+                <xpath expr="//div[hasclass('wk_o_project_kanban_main')]//div[hasclass('oe_kanban_global_click')]" position="inside">
                     <div class="o_kanban_primary_left" >
                         <div class="o_primary">
                             <center><span><t t-field="record.name.value"/></span></center>
                         </div>
                         <div t-if="record.channel.value == 'Magento v1.9'" style="color:rgb(162, 70, 137)">
                             <center>
-                                <img src="/magento1x_odoo_bridge/static/src/img/magento1x.png"/>
+                                <img alt="Magento v1.9" src="/magento1x_odoo_bridge/static/src/img/magento1x.png"/>
                             <h3><t t-esc="record.name.value"/></h3></center>
                         </div>
                     </div>

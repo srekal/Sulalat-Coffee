@@ -15,7 +15,7 @@
 # Developed By: PRAKASH KUMAR
 ##########################################################################
 from itertools import groupby
-from openerp import api, fields, models, _
+from odoo import api, fields, models, _
 import logging
 _logger = logging.getLogger(__name__)
 
@@ -59,7 +59,6 @@ class StockMove(models.Model):
                     sync_res = self.sync_magento1x_item(channel_id,qty_data,mapping,product_qty,**res)
                     message+=sync_res.get('message')
         return True
-
     def multichannel_sync_quantity(self, pick_details):
         product_id = pick_details.get('product_id')
         product_qty = pick_details.get('product_qty')

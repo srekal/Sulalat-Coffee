@@ -1,18 +1,20 @@
 # -*- coding: utf-8 -*-
-#################################################################################
-#
-#   Copyright (c) 2017-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>)
-#   See LICENSE URL <https://store.webkul.com/license.html/> for full copyright and licensing details.
-#################################################################################
-import odoo
-import base64
-from odoo import http, SUPERUSER_ID
+##############################################################################
+# Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>)
+# See LICENSE file for full copyright and licensing details.
+# License URL : <https://store.webkul.com/license.html/>
+##############################################################################
 import werkzeug
+import base64
+
+from odoo import http, SUPERUSER_ID
 from odoo.http import request
-from odoo.tools import crop_image
-from odoo.addons.web.controllers.main import WebClient, Binary,binary_content
+from odoo.tools import image_process
+from odoo.addons.web.controllers.main import WebClient, Binary
+
 import logging
 _logger = logging.getLogger(__name__)
+
 MAPPINGMODEL={
 	'product.product':'channel.product.mappings',
 	'sale.order':'channel.order.mappings',
@@ -34,15 +36,16 @@ class Channel(http.Controller):
 				#mapping.need_sync='yes'
 		return True
 
-
 	def core_content_image(self, xmlid=None, model='ir.attachment', id=None, field='datas',
 					  filename_field='datas_fname', unique=None, filename=None, mimetype=None,
 					  download=None, width=0, height=0, crop=False, access_token=None, **kwargs):
 		contenttype = kwargs.get('wk_mime_type') or 'image/jpg'
-		status, headers, content = binary_content(
+		response = Binary().content_common(
 			xmlid=xmlid, model=model, id=id, field=field, unique=unique, filename=filename,
 			filename_field=filename_field, download=download, mimetype=mimetype,
 			default_mimetype='image/jpg', access_token=access_token)
+		status, headers, content =  response.status_code, response.headers, base64.b64encode(response.data)
+		
 		if status == 304:
 			return werkzeug.wrappers.Response(status=304, headers=headers)
 		elif status == 301:
@@ -54,25 +57,23 @@ class Channel(http.Controller):
 		width = int(width or 0)
 
 		if crop and (width or height):
-			content = crop_image(content, type='center', size=(width, height), ratio=(1, 1))
-
+			# default crop is fron center
+			content = image_process(base64_source=content, size=(width or 0, height or 0), crop=crop)
 		elif content and (width or height):
 			# resize maximum 500*500
 			if width > 500:
 				width = 500
 			if height > 500:
 				height = 500
-			content = odoo.tools.image_resize_image(base64_source=content, size=(width or None, height or None), encoding='base64', filetype='PNG')
+			content = image_process(base64_source=content, size=(width or 0, height or 0))
 			# resize force jpg as filetype
-			headers = Binary().force_contenttype(headers, contenttype='image/jpg')
 
 		if content:
 			image_base64 = base64.b64decode(content)
 		else:
 			image_base64 = Binary().placeholder()  # could return (contenttype, content) in master
-			headers = Binary().force_contenttype(headers)
 
-		headers.append(('Content-Length', len(image_base64)))
+		headers.add_header('Content-Length', len(image_base64))
 		response = request.make_response(image_base64, headers)
 		response.status_code = status
 		return response

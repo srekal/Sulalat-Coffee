@@ -27,6 +27,8 @@ Source = [
 class ImportMagento1xCategories(models.TransientModel):
     _inherit = ['import.categories']
     _name = "import.magento1x.categories"
+    _description = "import.magento1x.categories"
+
     @api.model
     def _get_parent_categ_domain(self):
         res = self._get_ecom_store_domain()
@@ -115,6 +117,7 @@ class ImportMagento1xCategories(models.TransientModel):
             create_ids=create_ids,
             update_ids=update_ids,
         )
+
 
     def import_now(self):
         create_ids,update_ids,map_create_ids,map_update_ids=[],[],[],[]

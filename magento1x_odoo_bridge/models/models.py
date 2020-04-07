@@ -12,14 +12,14 @@ from  xmlrpc.client import Error
 from datetime import date, datetime,timedelta
 MageDateTimeFomat = '%Y-%m-%d %H:%M:%S'
 _logger = logging.getLogger(__name__)
-from openerp.addons.magento1x_odoo_bridge.tools.const import InfoFields
+from odoo.addons.magento1x_odoo_bridge.tools.const import InfoFields
 from odoo.addons.odoo_multi_channel_sale.tools import get_hash_dict
-from openerp.addons.odoo_multi_channel_sale.tools import extract_list as EL
-from openerp.addons.odoo_multi_channel_sale.tools import ensure_string as ES
-from openerp.addons.odoo_multi_channel_sale.tools import JoinList as JL
-from openerp.addons.odoo_multi_channel_sale.tools import MapId
-from openerp import api,fields, models,_
-from openerp.exceptions import UserError
+from odoo.addons.odoo_multi_channel_sale.tools import extract_list as EL
+from odoo.addons.odoo_multi_channel_sale.tools import ensure_string as ES
+from odoo.addons.odoo_multi_channel_sale.tools import JoinList as JL
+from odoo.addons.odoo_multi_channel_sale.tools import MapId
+from odoo import api,fields, models,_
+from odoo.exceptions import UserError
 Boolean = [
     ('1', 'True'),
     ('0', 'False'),
@@ -177,6 +177,18 @@ class MultiChannelSale(models.Model):
         result = super(MultiChannelSale, self).get_channel()
         result.append(("magento1x", "Magento v1.9"))
         return result
+
+    @api.model
+    def get_info_urls(self):
+        urls = super(MultiChannelSale,self).get_info_urls()
+        urls.update(
+            magento1x = {
+                'blog' : 'https://webkul.com/blog/multi-channel-magento-1-x-odoo-bridgemulti-channel-mob',
+                'store': 'https://store.webkul.com/Multi-Channel-Magento-1-x-Odoo-Bridge-Multi-Channel-MOB.html',
+            },
+        )
+        return urls
+
 
     def test_magento1x_connection(self):
         for obj in self:
@@ -439,11 +451,12 @@ class MultiChannelSale(models.Model):
         self.ensure_one()
         vals =dict(
             channel_id=self.id,
-            source='all',
-            operation= 'import',
+            # source='all',
+            # operation= 'import',
         )
         obj=self.env['import.magento1x.attributes.sets'].create(vals)
         return obj.import_now()
+
 
     def import_magento1x_partners(self):
         self.ensure_one()
